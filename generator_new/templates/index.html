@@ -4,28 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <title>密碼產生器h</title>
   </head>
   <body>
-    <h1>密碼產生器</h1>
-    {{password}}
-    <form action="{% url 'password' %}">
-      <label for="length">密碼長度</label>
-      <select name="length" id="length">
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8" selected>8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
-      <label for="input_length">自訂長度</label>
-      <input type="number" name="input_length" id="input_length" />
-      <input type="submit" value="產生" />
-      <p>
-        <input type="checkbox" name="uppercase" id="uppercase" />大寫
-        <input type="checkbox" name="numbers" id="numbers" />數字
-        <input type="checkbox" name="special" id="special" />特殊
-      </p>
-    </form>
+    <div class="hero is-fullheight is-dark">
+      <div class="hero-body">
+        <div class="container">
+          <div class="column is-12 has-text-centered">
+            <p class="title has-text-warning">密碼產生器</p>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <form action="{% url 'password' %}" class="box has-text-left">
+                <div class="field">
+                  <label for="length">密碼長度</label>
+                  <select name="length" id="length">
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8" selected>8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="input_length">自訂長度</label>
+                  <input type="number" name="input_length" id="input_length" />
+                </div>
+                  <div class="field">
+                    <label for="" class="label">
+                      <input
+                        type="checkbox"
+                        name="uppercase"
+                        id="uppercase"
+                      />大寫</label>
+                      <label for="" class="label">
+                      <input type="checkbox" name="numbers" id="numbers" />數字</label>
+                      <label for="" class="label">
+                      <input type="checkbox" name="special" id="special" />特殊</label>
+                  </div>
+
+                  <input type="submit" class="button has-background-warning has-text-danger" value="產生" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
