@@ -9,7 +9,7 @@
   <body>
     <h1>密碼產生器</h1>
     {{password}}
-    <form action="password/">
+    <form action="{% url 'password' %}">
       <label for="length">密碼長度</label>
       <select name="length" id="length">
         <option value="6">6</option>
@@ -18,9 +18,14 @@
         <option value="9">9</option>
         <option value="10">10</option>
       </select>
-      <label for="input-length">自訂長度</label>
-      <input type="number" name="input-length" id="input-length" />
+      <label for="input_length">自訂長度</label>
+      <input type="number" name="input_length" id="input_length" />
       <input type="submit" value="產生" />
+      <p>
+        <input type="checkbox" name="uppercase" id="uppercase" />大寫
+        <input type="checkbox" name="numbers" id="numbers" />數字
+        <input type="checkbox" name="special" id="special" />特殊
+      </p>
     </form>
   </body>
 </html>
